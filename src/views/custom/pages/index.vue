@@ -5,7 +5,7 @@
         <img src="https://img.yzcdn.cn/vant/cat.jpeg" >
       </van-swipe-item>
     </van-swipe>
-    <div class='shopName'>
+    <div class='shopName' @click='toShopList'>
       <van-image
         width="57px"
         height="57px"
@@ -18,8 +18,10 @@
       <div class='SIContent'>
         <img :src="require('../assets/imgs/1.png')">
         <div class="van-multi-ellipsis--l2">龙华区民治街道布龙路特发和平里左侧100米左侧100米</div>
-        <span></span>
-        <img :src="require('../assets/imgs/2.png')" class='phone'>
+        <div class='SIRinght'>
+          <span></span>
+          <img :src="require('../assets/imgs/2.png')" class='phone'>
+        </div>
       </div>
       <van-divider />
       <div class='SIContent'>
@@ -28,17 +30,20 @@
       </div>
     </div>
     <div class='division'></div>
-    <van-tabs v-model="activeName" swipeable animated color='#76C5C5' line-width='43'>
+    <van-tabs  v-model="activeName" swipeable animated color='#76C5C5' line-width='43'>
       <van-tab title="服务项目" name="project">
-        <van-card
-          num="2"
-          tag="标签"
-          price="2.00"
-          desc="描述信息"
-          title="商品标题"
-          thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
-          origin-price="10.00"
-        />
+        <div class='projectItem' @click='toDetails'>
+          <img src="https://img.yzcdn.cn/vant/cat.jpeg">
+          <div>
+            <div class="van-multi-ellipsis--l2">龙华区民治街道布龙路特发和平里左侧100米左侧100米</div>
+            <h6>
+              <span>￥296</span>
+              <i>￥296</i>
+              <img :src="require('../assets/imgs/4.png')">
+            </h6>
+          </div>
+        </div>
+        <van-divider />
       </van-tab>
       <van-tab title="门店介绍" name="introduce">内容 2</van-tab>
     </van-tabs>
@@ -51,6 +56,16 @@ export default {
   data(){
     return{
       activeName:'project'
+    }
+  },
+  methods:{
+    toDetails(){
+      this.$router.push({
+        path:'/shopDetails'
+      })
+    },
+    toShopList(){
+      this.$router.push({path:"/shopList"})
     }
   }
 }
@@ -81,42 +96,92 @@ export default {
       padding:0px 20px;
       overflow: hidden;
       .SIContent{
+        position: relative;
         margin-top:15px;
         >img:first-child{
           width: 18px;
           height: 18px;
-          margin-right: 6px;
           vertical-align: top;
+          position: absolute;
+          top:0px;
+          left: 0;
         }
         .van-multi-ellipsis--l2{
           display: inline-block;
           vertical-align: middle;
-          width: 232px;
           color: #666666;
           font-size: 14px;
+          padding-left: 25px;
+          padding-right: 55px;
         }
-        >span{
-          width: 1px;
-          height: 24px;
-          background: rgba(223,223,223,1);
-          display: inline-block;
-          vertical-align: middle;
-          margin: 0px 14px;
-        }
-        .phone{
-          width: 24px;
-          height: 24px;
-          vertical-align: middle
+        .SIRinght{
+          position: absolute;
+          top:50%;
+          right: 0;
+          transform: translateY(-50%);
+          >span{
+            width: 1px;
+            height: 24px;
+            background: rgba(223,223,223,1);
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0px 14px;
+          }
+          .phone{
+            width: 24px;
+            height: 24px;
+            vertical-align: middle
+          }
         }
       }
       .van-divider{
         margin:10px 0
       }
+      
     }
     .division{
       height: 5px;
       background:rgba(243,243,243,1);
       margin-top: 15px;
+    }
+    .van-tabs{
+      padding:0 20px;
+    }
+    .projectItem{
+      overflow: hidden;
+      margin-top: 15px;
+      >img{
+        float: left;
+        width: 94px;
+        margin-right: 10px;
+      }
+      >div{
+        .van-multi-ellipsis--l2{
+          font-weight: 700
+        }
+        >h6{
+          font-weight:400;
+          margin-top:8px;
+          >span{
+            font-size: 16px;
+            color: #FF4E4E;
+            margin-right: 8px;
+          }
+          >i{
+            font-style: normal;
+            color: #999999;
+            font-size: 12px;
+            text-decoration:line-through
+          }
+          >img{
+            float: right;
+            width: 16px;
+            height: 16px;
+            margin-top:3px;
+            margin-right:6px;
+          }
+        }
+      }
     }
   }
 </style>

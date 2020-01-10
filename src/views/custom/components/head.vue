@@ -31,6 +31,7 @@ export default {
 	},
 	methods:{
 		toBack(){
+			this.$router.back()
 		}
 	}
 }
@@ -54,11 +55,9 @@ export default {
 				vertical-align: middle;
 			}
 			>span{
-				margin-left: -20px;
-				padding-left: 25px;
 				display: inline-block;
 				margin: 0 -16px;
-				padding: 0 25px;
+				padding: 0 17px;
 				vertical-align: middle;
 				font-size: 16px;
 			}

@@ -26,6 +26,66 @@ const routes = [
       },
       component: () => import("@views/custom/pages/index.vue")
     },
+    {
+      path: "/my",
+      name: "my",
+      meta: {
+        title: "首页",
+        keepAlive: true,
+        footer: true,
+        isBack:false,
+      },
+      component: () => import("@views/custom/pages/my.vue")
+    },
+    {
+      path: "/shopList",
+      name: "shopList",
+      meta: {
+        title: "门店详情",
+      },
+      component: () => import("@views/custom/pages/shopList.vue")
+    },
+    {
+      path: "/shopDetails",
+      name: "shopDetails",
+      meta: {
+        title: "门店详情",
+      },
+      component: () => import("@views/custom/pages/shopDetails.vue")
+    },
+    {
+      path: "/settleOrder",
+      name: "settleOrder",
+      meta: {
+        title: "结算订单",
+      },
+      component: () => import("@views/custom/pages/settleOrder.vue")
+    },
+    {
+      path: "/result",
+      name: "result",
+      meta: {
+        title: "结果页面",
+        isBack:false,
+      },
+      component: () => import("@views/custom/pages/result.vue")
+    },
+    {
+      path: "/order",
+      name: "order",
+      meta: {
+        title: "我的订单",
+      },
+      component: () => import("@views/custom/pages/order.vue")
+    },
+    {
+      path: "/orderDetails",
+      name: "orderDetails",
+      meta: {
+        title: "订单详情",
+      },
+      component: () => import("@views/custom/pages/orderDetails.vue")
+    },
 ];
 const router = new Router({
   mode: "history",

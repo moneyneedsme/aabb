@@ -90,7 +90,12 @@ export default {
 [v-cloak] {
   display: none !important;
 }
-
+body{
+  background: white!important
+}
+i{
+  font-style: normal
+}
 .router {
   position: absolute;
   width: 100%;
