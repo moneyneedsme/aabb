@@ -39,7 +39,7 @@
           </van-tab>
           <van-tab title="待付款">待付款</van-tab>
           <van-tab title="待使用">待使用</van-tab>
-          <van-tab title="以完成">以完成</van-tab>
+          <van-tab title="以完成">已完成</van-tab>
         </van-tabs>
       </pull>
   </div>

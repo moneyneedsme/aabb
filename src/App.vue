@@ -90,6 +90,9 @@ export default {
 [v-cloak] {
   display: none !important;
 }
+.maxZIndex{
+    z-index: 99999!important;
+  }
 body{
   background: white!important
 }

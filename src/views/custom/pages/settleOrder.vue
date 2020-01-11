@@ -68,7 +68,7 @@
         </div>
       </div>
     </van-action-sheet>
-    <van-overlay :show='balance' style='z-index:9999'>
+    <van-overlay :show='balance' class='maxZIndex'>
       <div class="balance" >
         <van-icon name="cross"  @click='balance=false'/>
         <p>余额不足，是否进行充值？</p>
