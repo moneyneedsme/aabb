@@ -4,7 +4,7 @@
       <img src="https://img.yzcdn.cn/vant/cat.jpeg">
       <h2>广州吴彦祖</h2>
     </div>
-    <div class='card'>
+    <div class='card' @click='toCard'>
       <template v-if='false'>
         <div>
           <h6>VIP年卡</h6>
@@ -59,6 +59,11 @@ export default {
     toOrder(){
       this.$router.push({
         path:'/order'
+      })
+    },
+    toCard(){
+      this.$router.push({
+        path:'/yearCard'
       })
     }
   }

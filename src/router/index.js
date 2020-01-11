@@ -86,6 +86,14 @@ const routes = [
       },
       component: () => import("@views/custom/pages/orderDetails.vue")
     },
+    {
+      path: "/yearCard",
+      name: "yearCard",
+      meta: {
+        title: "我的年卡",
+      },
+      component: () => import("@views/custom/pages/yearCard.vue")
+    },
 ];
 const router = new Router({
   mode: "history",

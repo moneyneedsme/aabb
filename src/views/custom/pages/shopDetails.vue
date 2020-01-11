@@ -91,12 +91,12 @@
         <van-tabs style='margin-top:15px'  v-model="activeTime" swipeable animated  color='#76C5C5' line-width='50%' swipe-threshold='2'>
           <van-tab title="上午" name="morning">
             <div class='tabsContent'>
-              <div v-for='(v,i) in timeList.morning' :key='i' :class='{"active":pinkTime==i}'>{{v}}</div>
+              <div v-for='(v,i) in timeList.morning' :key='i' :class='{"active":pinkTime==i}' @click='pinkTime=i'>{{v}}</div>
             </div>
           </van-tab>
           <van-tab title="下午" name="afternoon">
             <div class='tabsContent'>
-              <div v-for='(v,i) in timeList.afternoon' :key='i' :class='{"active":pinkTime==i}'>{{v}}</div>
+              <div v-for='(v,i) in timeList.afternoon' :key='i' :class='{"active":pinkTime==i}' @click='pinkTime=i'>{{v}}</div>
             </div>
           </van-tab>
         </van-tabs>
