@@ -1,7 +1,7 @@
 <template>
   <div class='yearCard'>
     <div class='head'>
-      <h6>
+      <h6 @click='toUse'>
         <img :src="require('../assets/imgs/19.png')">
         <span>使用明细</span>
       </h6>
@@ -64,6 +64,11 @@ export default {
     }
   },
   methods:{
+    toUse(){
+      this.$router.push({
+        path:'/useDetails'
+      })
+    }
   }
 }
 </script>

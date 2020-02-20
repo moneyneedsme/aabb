@@ -26,21 +26,21 @@
     <div class='content'> 
       <van-cell title="预约订单" is-link value="查看全部" :border='false' @click='toOrder'/>
       <van-row type="flex" justify="space-between">
-        <van-col span="7">
+        <van-col span="7"  @click='toOrder'>
           <img :src="require('../assets/imgs/13.png')">
           <p>待使用</p>
         </van-col>
-        <van-col span="7">
+        <van-col span="7"  @click='toOrder'>
           <img :src="require('../assets/imgs/14.png')">
           <p>进行中</p>
         </van-col>
-        <van-col span="7">
+        <van-col span="7"  @click='toOrder'>
           <img :src="require('../assets/imgs/14.png')">
           <p>已完成</p>
         </van-col>
       </van-row>
       <van-divider />
-      <div class='wallet'>
+      <div class='wallet' @click='toWallet'>
         <img :src="require('../assets/imgs/16.png')">
         <span>我的钱包支付（余额：1999.00）</span>
       </div>
@@ -56,6 +56,11 @@ export default {
     }
   },
   methods:{
+    toWallet(){
+      this.$router.push({
+        path:'/wallet'
+      })
+    },
     toOrder(){
       this.$router.push({
         path:'/order'

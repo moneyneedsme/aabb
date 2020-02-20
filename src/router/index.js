@@ -94,6 +94,46 @@ const routes = [
       },
       component: () => import("@views/custom/pages/yearCard.vue")
     },
+    {
+      path: "/useDetails",
+      name: "useDetails",
+      meta: {
+        title: "使用明细",
+      },
+      component: () => import("@views/custom/pages/useDetails.vue")
+    },
+    {
+      path: "/wallet",
+      name: "wallet",
+      meta: {
+        title: "我的钱包",
+      },
+      component: () => import("@views/custom/pages/wallet.vue")
+    },
+    {
+      path: "/recharge",
+      name: "recharge",
+      meta: {
+        title: "充值",
+      },
+      component: () => import("@views/custom/pages/recharge.vue")
+    },
+    {
+      path: "/balanceDetails",
+      name: "balanceDetails",
+      meta: {
+        title: "余额明细",
+      },
+      component: () => import("@views/custom/pages/balanceDetails.vue")
+    },
+    {
+      path: "/flowBill",
+      name: "flowBill",
+      meta: {
+        title: "详情",
+      },
+      component: () => import("@views/custom/pages/flowBill.vue")
+    },
 ];
 const router = new Router({
   mode: "history",
